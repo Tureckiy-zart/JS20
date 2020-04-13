@@ -1,30 +1,5 @@
 "use strict";
-const credits = 23580;
-const prisePerDroid = 3000;
-let totalPrice;
-let countToBuy;
-let message;
 
-let maxValue = credits / prisePerDroid;
-maxValue = Number(maxValue); //привести в число
-alert(`Вы можите купить максимум ${Math.floor(maxValue)} дроидов`);
-console.log(typeof maxValue);
-
-countToBuy = prompt("Введите кол-во дроидов для покупки :");
-totalPrice = countToBuy * prisePerDroid;
-
-if (countToBuy === null) {
-  message = "Отменено пользователем!";
-  console.log(message);
-} else if (totalPrice > credits) {
-  const totalShortfall = totalPrice - credits;
-  alert(`Общая сумма превышет колличество кредитов на ${totalShortfall}`);
-} else {
-  let creditsAmount = credits - totalPrice;
-  alert(
-    `Вы купили ${countToBuy} дроидов, на счету осталось ${creditsAmount} кредитов.`
-  );
-}
 
 // На счету пользователя есть 23580 кредитов,
 // значение хранится в переменной credits

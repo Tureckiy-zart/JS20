@@ -1,20 +1,5 @@
 "use strict";
 
-let total = 0;
-let counter = true;
-
-while (counter) {
-    let input = prompt(`now the total is ${total}, enter a number:`);
-    if (input) {
-        total += Number(input);
-    } else {
-        counter = false;
-        alert(`Done the total is ${total}`);
-    }
-}
-
-
-
 
 // Напиши скрипт который просит посетителя
 // ввести число в prompt до тех пор, пока

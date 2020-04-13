@@ -1,19 +1,5 @@
 "use strict";
 
-const ADMIN_PASSWORD = "jqueryismyjam";
-let message;
-
-let adminPassword = prompt("Введите пароль администратора");
-if (adminPassword === ADMIN_PASSWORD) {
-  message = "Добро пожаловать!";
-  alert(message);
-} else if(adminPassword === null){
-  message = "Отменено пользователем!";
-  console.log(message);
-} else {
-  message = "Доступ запрещен, неверный пароль!";
-  alert(message);
-}
 
 // Напиши скрипт имитирующий авторизацию администратора в панели управления.
 
