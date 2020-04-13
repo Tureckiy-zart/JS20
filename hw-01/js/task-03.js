@@ -1,5 +1,30 @@
 "use strict";
-
+// ===================Conditions============================
+const ADMIN_PASSWORD = "ADMIN_PASSWORD";
+let message;
+// ===================Solution==============================
+let adminPassword = prompt("Введите пароль администратора");
+// =========================================================
+switch (adminPassword) {
+  case null:
+    message = "Отменено пользователем!";
+    break;
+  case "ADMIN_PASSWORD":
+    message = "Добро пожаловать!";
+    break;
+  default:
+    message = "Доступ запрещен, неверный пароль!";
+}
+alert(message);
+// ===================Solution 2 ============================
+// if (adminPassword === null) {
+//   message = "Отменено пользователем!";
+// } else if (adminPassword === ADMIN_PASSWORD) {
+//   message = "Добро пожаловать!";
+// } else {
+//   message = "Доступ запрещен, неверный пароль!";
+// }
+// alert(message);
 
 // Напиши скрипт имитирующий авторизацию администратора в панели управления.
 
