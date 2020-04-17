@@ -51,16 +51,34 @@ const checkForSpam = function (message) {
   const words = message.toLowerCase().split(" ");
 
   for (const word of words) {
-    for (const spam of spams) {
-      if (word.includes(spam)) {
-        return true;
-      } else {
-       //  return false;    // если раскоментировать то делает билибидру - меняет 73ю строку на фолс
-      }
+    for (const i=0; i<spams.length; i++) 
+    console.log(spams[i]);
+    
+    //   if (word.includes(spams[i])) {
+    //     return true;
+    //   } else {
+    //     return false;    // если раскоментировать то делает билибидру - меняет 73ю строку на фолс
+    //   }
     }
-  }
+  
+  // return dddd
 };
+
+
+// debugger
+
+//   for (const word of words) {
+//           if (word.includes(spams[i])) {
+//         return true;
+//       } else {
+//         return false;    // если раскоментировать то делает билибидру - меняет 73ю строку на фолс
+//       }
+//     return
+//   }
+   
 // };
+
+// };  
 // for (const spam of spams) {(word.includes(spam)) ? true : false}}
 
 /*

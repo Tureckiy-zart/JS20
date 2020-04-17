@@ -11,57 +11,37 @@
 //  набор символов, не обязательно. Если хочешь, в случае некорректного ввода, показывай
 //  alert с текстом 'Было введено не число, попробуйте еще раз', при этом результат prompt
 //  записывать в массив чисел не нужно, после чего снова пользователю предлагается ввести число в prompt.
-
-let input;
+const simpleCounter  = function() {
 const numbers = [];
-let total = 0;
-const ifNAN = "Было введено не число, попробуйте еще раз";
-const totalCount= 'The total amount of numbers entered equals to'
-
 let userInput;
-  do {
-    userInput = prompt("Введите число:");
-    if (!parseInt(userInput) && userInput !== null) {
-      alert(ifNAN);
-    } else {
-      const pushInNumbers =
-        userInput === null ? "continue" : numbers.push(userInput);
-    }
-  } while (userInput !== null);
+do {
+  userInput = prompt("Введите число:");
+  const userInputInteger = Number(userInput);
+//  *********************************************
+  if (!userInputInteger && userInput !== null && alert("Было введено не число, попробуйте еще раз"));
+  if (userInput === null ? "continue" : numbers.push(userInputInteger))
+  {
+    //!!!
+  // if (!userInputInteger && userInput !== null) {
+  //   alert("Было введено не число, попробуйте еще раз");
+  // } else {
+  //   userInput === null ? "continue" : numbers.push(userInputInteger);
+  // }
+  //!!!
+}
+    console.log(numbers);
+} while (userInput !== null);
+//  *********************************************
+let total = 0;
+for (let number of numbers) {
+  total += number;
+}
+//  *********************************************
 
-  for (const number of numbers) {
-    total += Number(number);
-  }
-  if (
-    numbers.length > 0 &&
-    alert(`${totalCount} ${total}`) // поячему не сработает если поставить totalCount
-  );
-console.log(numbers);
-console.log(total);
+alert(`The total amount of numbers entered equals to ${total}`)
+}
 
-
-// let userInput;
-// function addInArray(char) {
-//   do {
-//     userInput = char;
-//     if (!parseInt(userInput) && userInput !== null) {
-//       alert(ifNAN);
-//     } else {
-//       const pushInNumbers =
-//         (userInput === null) ? "continue" : numbers.push(userInput);
-//     }
-//   } while (userInput !== null);
-
-//   for (const number of numbers) {
-//     total += Number(number);
-//   }
-//   if (
-//     numbers.length > 0 &&
-//     alert(`The total amount of numbers entered equals to ${total}`)
-//   );
-// }
-// console.log(numbers);
-// addInArray(prompt("Введите число:"));
+ simpleCounter()
 
 // const arr1 = [1, 2, 2, 2, 2, 2, "lol", 2, 3, 4, 5];
 // const arr2 = [8, 7, 6];
