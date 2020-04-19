@@ -4,12 +4,23 @@
 // * то функция возвращает true, если запрещенных слов нет функция возвращает false.
 // * Слова в строке могут быть в произвольном регистре.
 
-const spams = ["spam", "sale", "boom", "lol", "fuck", "duck"];
-let back = "";
+// =============================Solution 1==================================
 
-const checkForSpam = function (message) {
-  // debugger
-  let newMessage = message.toLowerCase().split(" ");
+
+const checkForSpam = function(message) {
+  const messageLc = message.toLowerCase();
+  return console.log(messageLc.includes('sale') || messageLc.includes('spam'));
+};
+
+
+// =============================Solution 2==================================
+
+// const spams = ["spam", "sale", "boom", "lol", "fuck", "duck"];
+// let back = "";
+
+// const checkForSpam = function (message) {
+//   // debugger
+//   let newMessage = message.toLowerCase().split(" ");
 //   let messageOutput = ' ';
    
 //  for (const spam of spams) {
@@ -25,29 +36,29 @@ const checkForSpam = function (message) {
 // }
  
  
-  for (const spam of spams) {
+  // for (const spam of spams) {
 
-    // ** if ((newMessage.includes(spam)  ? "continue" : numbers.push(userInputInteger))
-    // if (newMessage.includes(spam) !== true ? 'true' : 'false')
-      if (newMessage.includes(spam)) {
-        back = "true"
-        return back;
-      } else {return false};
+  //   // ** if ((newMessage.includes(spam)  ? "continue" : numbers.push(userInputInteger))
+  //   // if (newMessage.includes(spam) !== true ? 'true' : 'false')
+  //     if (newMessage.includes(spam)) {
+  //       back = "true"
+  //       return back;
+  //     } else {return false};
       // let count="";
       // count += spam;
       // console.log(count);
       
       // console.dir(message);
-    }
-  }
-  console.dir (back);
+  //   }
+  // }
+  // console.dir (back);
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
 console.log(checkForSpam("Latest technology spa m s ale news")); // false
 
-console.log(checkForSpam("JavaScript [SPAM] weekly newsletter duc k")); // false
+console.log(checkForSpam("JavaScript weekly newsletter duc k")); // false
 
 console.log(checkForSpam("Get best sale offers now!")); // true
 
