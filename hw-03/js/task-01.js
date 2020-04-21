@@ -1,16 +1,22 @@
 "use strict";
-{console.log(
-  "======================================================================="
-);
-console.log(
-  "============================Solution 1================================="
-);
-console.log(
-  "======================================================================="
-);
+{
+  console.log(
+    "======================================================================="
+  );
+  console.log(
+    "============================Solution 1================================="
+  );
+  console.log(
+    "======================================================================="
+  );
 }
 class User {
-  constructor({ name = "John Dou", age = 150, hobby = "fishing", premium = true }) {
+  constructor({
+    name = "John Dou",
+    age = 150,
+    hobby = "fishing",
+    premium = true,
+  }) {
     this.name = name;
     this.age = age;
     this.hobby = hobby;
@@ -38,33 +44,34 @@ const user2 = new User({
   premium: false,
 });
 
-const user3 = new User({
-})
-console.log(user3);
+const user3 = new User({});
 {
+  console.log(user3);
   user1.changeProp("happy", "skydiving", "false");
-user2.changeProp("lonlyness", "drving", "true");
+  user2.changeProp("lonlyness", "drving", "true");
 
-user1.logKeys();
-console.log("==============");
-user2.logKeys();
-console.log("==============");
-user3.logKeys();
-console.log("==============");
-console.log(user1);
-console.log("==============");
-console.log(user2);
+  user1.logKeys();
+  console.log("==============");
+  user2.logKeys();
+  console.log("==============");
+  user3.logKeys();
+  console.log("==============");
+  console.log(user1);
+  console.log("==============");
+  console.log(user2);
 }
 
-{console.log(
-  "======================================================================="
-);
-console.log(
-  "============================Solution 2================================="
-);
-console.log(
-  "======================================================================="
-);}
+{
+  console.log(
+    "======================================================================="
+  );
+  console.log(
+    "============================Solution 2================================="
+  );
+  console.log(
+    "======================================================================="
+  );
+}
 
 // Напиши скрипт, который, для объекта user, последовательно:
 
