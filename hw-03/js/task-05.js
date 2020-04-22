@@ -9,10 +9,9 @@ const products = [
   { name: "Дроид", price: 400, quantity: 7 },
   { name: "Захват", price: 1200, quantity: 2 },
 ];
-const getAllPropValues = function (arr, prop) {
-  const name = arr.map((product) => product[prop]);
-  return name;
-};
+
+const getAllPropValues = (arr, prop) => arr.filter(product => product[prop]).map(product => product[prop])
+
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
  */
