@@ -18,8 +18,8 @@ do {
   userInput = prompt("Введите число:");
   const userInputInteger = Number(userInput);
 //  *********************************************
-  if (!userInputInteger && userInput !== null && alert("Было введено не число, попробуйте еще раз"));
-  if (userInput === null ? "continue" : numbers.push(userInputInteger))
+if (!userInputInteger && userInput !== null && alert("Было введено не число, попробуйте еще раз"));
+if (userInput === null ? "continue" : numbers.push(userInputInteger))
   {
     //!!!
   // if (!userInputInteger && userInput !== null) {

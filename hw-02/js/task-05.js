@@ -7,7 +7,7 @@
 // =============================Solution 1==================================
 
 
-const checkForSpam = function(message) {
+const checkForSpam1 = function(message) {
   const messageLc = message.toLowerCase();
   return console.log(messageLc.includes('sale') || messageLc.includes('spam'));
 };
@@ -15,25 +15,25 @@ const checkForSpam = function(message) {
 
 // =============================Solution 2==================================
 
-// const spams = ["spam", "sale", "boom", "lol", "fuck", "duck"];
-// let back = "";
+const spams = ["spam", "sale", "boom", "lol", "fuck", "duck"];
+let back = "";
 
-// const checkForSpam = function (message) {
-//   // debugger
-//   let newMessage = message.toLowerCase().split(" ");
-//   let messageOutput = ' ';
+const checkForSpam = function (message) {
+  // debugger
+  let newMessage = message.toLowerCase().split(" ");
+  let messageOutput = ' ';
    
-//  for (const spam of spams) {
-// // console.log(messageOutput);
-// if (newMessage.includes(spam)) {
-//   return true;
-// } else {
-//   return false
-// }
+ for (const spam of spams) {
+// console.log(messageOutput);
+if (newMessage.includes(spam)) {
+  return true;
+} else {
+  return false
+}
 
 
-// }
-// }
+}
+}
  
  
   // for (const spam of spams) {
