@@ -20,7 +20,10 @@
   margin: 0 auto;
 }
 /* CONTACT */
-
+.body {
+  margin: 50px;
+  padding: 50px;
+}
 .contact {
   display: block;
   background-color: #222;
