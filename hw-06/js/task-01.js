@@ -42,7 +42,7 @@ console.log(
   "================================Задание 3============================================"
 );
 const getUsersWithGender = (users, genders) =>
-  users.filter(({ gender }) => gender === genders);
+  users.filter(({ gender, name }) => gender === genders).map(({name}) => name);
 
 console.table(getUsersWithGender(users, "male")); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
@@ -96,7 +96,7 @@ console.log(
 // *Массив имен всех пользователей у которых есть друг с указанным именем.
 
 const getUsersWithFriend = (users, friendName) =>
-  users.filter(({ friends }) => friends.includes(friendName));
+  users.filter(({ friends }) => friends.includes(friendName)).map(({name}) => name);
 
 console.table(getUsersWithFriend(users, "Briana Decker")); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.table(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sheree Anthony' ]
@@ -120,23 +120,22 @@ console.log(
 
 // *Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
 
-const getSortedUniqueSkills = users => {
-    return users
-      .reduce((skillsAcc, {skills}) => {
-        skillsAcc.push(...skills);
-        return skillsAcc;
-      }, [])
-      .filter((value, index, user) => user.indexOf(value) === index)
-      .sort();
-  };
-  console.table(getSortedUniqueSkills(users));
-
+const getSortedUniqueSkills = (users) => {
+  return users
+    .reduce((skillsAcc, { skills }) => {
+      skillsAcc.push(...skills);
+      return skillsAcc;
+    }, [])
+    .filter((value, index, user) => user.indexOf(value) === index)
+    .sort();
+};
+console.table(getSortedUniqueSkills(users));
 
 //!!!! ТАК НЕ РОБЭ!!!!!!!!!!!!!!!!!!!
 // const getSortedUniqueSkills2 = (users) => {
 //   return users.reduce(
-//     (acc, item) => 
-//       !acc.includes(item.skills) ? acc.push(...item.skills) : acc,   
+//     (acc, item) =>
+//       !acc.includes(item.skills) ? acc.push(...item.skills) : acc,
 //     return acc;
 //     []
 //   );
@@ -144,3 +143,4 @@ const getSortedUniqueSkills = users => {
 //   //   .sort();
 // };
 // console.table(getSortedUniqueSkills2(users));
+
