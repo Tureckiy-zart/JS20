@@ -83,35 +83,35 @@
 
 
 
-const metods = {
-  changeProp(mood, hobby, premium) {
-    this.mood = mood;
-    this.hobby = hobby;
-    this.premium = premium;
-  },
-  logKeys() {
-    const keys = Object.keys(this);
-    for (const key of keys) {
-      console.log(`${key} is:  ${this[key]}`);
-    }
-    const entries = Object.entries(this);
-    console.log(entries);
-  }
-}
-const user = Object.create(metods)
-console.log(user);
-
-user.name ="Mango"
-user.age = 20,
-user.hobby = "html",
-user.premium = true,
-console.log(user);
-
-
-user.changeProp("happy", "skydiving", "false");
-user.logKeys();
+// const metods = {
+//   changeProp(mood, hobby, premium) {
+//     this.mood = mood;
+//     this.hobby = hobby;
+//     this.premium = premium;
+//   },
+//   logKeys() {
+//     const keys = Object.keys(this);
+//     for (const key of keys) {
+//       console.log(`${key} is:  ${this[key]}`);
+//     }
+//     const entries = Object.entries(this);
+//     console.log(entries);
+//   }
+// }
+// const user = Object.create(metods)
 // console.log(user);
 
-// const a = user.name;
-// const b = user['name'];
-// console.log("value" , b);
+// user.name ="Mango"
+// user.age = 20,
+// user.hobby = "html",
+// user.premium = true,
+// console.log(user);
+
+
+// user.changeProp("happy", "skydiving", "false");
+// user.logKeys();
+// // console.log(user);
+
+// // const a = user.name;
+// // const b = user['name'];
+// // console.log("value" , b);

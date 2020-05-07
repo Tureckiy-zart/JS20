@@ -6,12 +6,10 @@
 
 // =============================Solution 1==================================
 
-
-const checkForSpam1 = function(message) {
+const checkForSpam1 = function (message) {
   const messageLc = message.toLowerCase();
-  return console.log(messageLc.includes('sale') || messageLc.includes('spam'));
+  return console.log(messageLc.includes("sale") || messageLc.includes("spam"));
 };
-
 
 // =============================Solution 2==================================
 
@@ -19,39 +17,34 @@ const spams = ["spam", "sale", "boom", "lol", "fuck", "duck"];
 let back = "";
 
 const checkForSpam = function (message) {
-  // debugger
   let newMessage = message.toLowerCase().split(" ");
-  let messageOutput = ' ';
-   
- for (const spam of spams) {
-// console.log(messageOutput);
-if (newMessage.includes(spam)) {
-  return true;
-} else {
-  return false
-}
+  let messageOutput = " ";
 
+  for (const spam of spams) {
+    if (newMessage.includes(spam)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
 
-}
-}
- 
- 
-  // for (const spam of spams) {
+// for (const spam of spams) {
 
-  //   // ** if ((newMessage.includes(spam)  ? "continue" : numbers.push(userInputInteger))
-  //   // if (newMessage.includes(spam) !== true ? 'true' : 'false')
-  //     if (newMessage.includes(spam)) {
-  //       back = "true"
-  //       return back;
-  //     } else {return false};
-      // let count="";
-      // count += spam;
-      // console.log(count);
-      
-      // console.dir(message);
-  //   }
-  // }
-  // console.dir (back);
+//   // ** if ((newMessage.includes(spam)  ? "continue" : numbers.push(userInputInteger))
+//   // if (newMessage.includes(spam) !== true ? 'true' : 'false')
+//     if (newMessage.includes(spam)) {
+//       back = "true"
+//       return back;
+//     } else {return false};
+// let count="";
+// count += spam;
+// console.log(count);
+
+// console.dir(message);
+//   }
+// }
+// console.dir (back);
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
