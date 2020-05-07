@@ -31,7 +31,7 @@ refs.input.addEventListener("input", getValue);
 function renderHTML(e) {
   e.preventDefault();
   createBoxes(inputValue);
-  refs.renderBtn.removeEventListener("click", renderHTML);
+  // refs.renderBtn.removeEventListener("click", renderHTML);
   // refs.input.reset() //!!
 }
 refs.renderBtn.addEventListener("click", renderHTML);
@@ -40,7 +40,7 @@ refs.destroyBtn.addEventListener("click", clearHTML);
 function clearHTML(e) {
   e.preventDefault();
   refs.boxes.innerHTML = "";
-  refs.destroyBtn.removeEventListener("click", clearHTML);
+  // refs.destroyBtn.removeEventListener("click", clearHTML);
   // console.log(e);
 }
 

@@ -132,3 +132,8 @@ input:required:focus:invalid {
 color: rgb(43, 91, 236);
 font-size: 1rem;
 }
+
+
+.boxes{
+  display: flex;
+}
