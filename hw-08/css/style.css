@@ -1,0 +1,94 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat"; 
+  outline: 1px solid black;
+}
+body {
+  padding: 20px;
+  background-color: #acacac;
+  height: 100vh;
+}
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  border: 4px solid #cccccc;
+}
+/* CONTACT */
+.form__wrapper{
+  display: flex;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  height: 200px;
+}
+.form {
+  padding: 50px 20px;
+  background-color: #222;
+}
+/* CONTACT FORM */ /*тут*/ 
+.form-box {
+  height: 100%;
+  /* width: calc(50% - 15px); */
+  /* width: 40%; */
+}
+.form-box:last-child{
+  width: 30%;
+}
+/* .form-box:not(:last-child){ */
+  /* width: 30%; */
+/* } */
+.input {
+  outline: none;
+  padding: 10px;
+  height: 25%;
+  width: 90%;
+  /* display: block; */
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  background-color: #3a3838;
+  font-size: 14px;
+  font-weight: 700;
+}
+.input:nth-child(-n + 2) {
+  margin-bottom: 6%;
+}
+.input:last-child {
+  margin-bottom: 0px;
+}
+.tall {
+  height: 100%;
+  width: 90%;
+  resize: none;
+}
+.form__submit {
+  width: 25%;
+  padding: 8px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  background-color: #3a3838;
+  /* height: 66px; */
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+  color: #acacac;
+}
+
+.input::placeholder {
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: rgb(187, 187, 187);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+input:required:focus:valid {
+  border-bottom: 6px solid #42ff00;
+}
+
+input:required:focus:invalid {
+  border-bottom: 6px solid #ff0000;
+}
+
