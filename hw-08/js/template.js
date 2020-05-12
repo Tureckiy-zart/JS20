@@ -20,22 +20,23 @@ export const tamplateMarkup = (item) => {
 
 // export const tamplateMarkup = function (data) {
 // import data from "./gallery-items.js";
-// //
+// // //
 // const testData = {
-//   context:data,
+//   self: this,
+  
 //   tamplateMarkup2() {
-//     const context = data;
+//     // const context = data;
 //     // this = data;
 //     // console.log(context);
 //     const makeLi = () => {
 //       return `
 //     <li class="gallery__item">
-//         <a class="gallery__link" href="${context.original}">
+//         <a class="gallery__link" href="${self.original}">
 //         <img
 //           class="gallery__image"
-//           src="${context.preview}"
-//           data-source="${context.original}"
-//           alt="${context.description}"
+//           src="${self.preview}"
+//           data-source="${self.original}"
+//           alt="${self.description}"
 //         />
 //         </a>
 //       </li>

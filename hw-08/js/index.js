@@ -2,9 +2,9 @@
 //========================================================
 import { refs } from "./refs.js";
 import { markupGallery, openModal } from "./functions.js";
-import data from "./gallery-items.js";
+// import data from "./gallery-items.js";
 //========================================================
-refs.gallery.insertAdjacentHTML("beforeend", markupGallery(data));
+
 refs.gallery.addEventListener("click", openModal);
 
 
