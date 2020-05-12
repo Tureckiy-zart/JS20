@@ -19,14 +19,14 @@
       Для того чтобы открыть, необходимо добавить на div.lightbox CSS-класс is-open
     -->
   <div class="lightbox js-lightbox">
-    <div class="lightbox__overlay"></div>
+    <div class="lightbox__overlay">
+    </div>
 
     <div class="lightbox__content">
       <img class="lightbox__image" src="" alt="" />
-      <!-- <button id="prev">Назад</button>
-      <button id="next">Вперед</button> -->
+      <button id="prevBtn" data-action="nextSlide">Назад</button>
+      <button id="nextBtn" data-action="prevSlide">Вперед</button>
     </div>
-
     <button type="button" class="lightbox__button" data-action="close-lightbox"></button>
   </div>
 
@@ -41,6 +41,3 @@
       data-source="https://cdn.pixabay.com/photo/2010/12/13/10/13/tulips-2546_1280.jpg" alt="Tulips" />
   </a>
 </li> -->
-
-
-

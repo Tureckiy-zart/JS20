@@ -32,6 +32,8 @@ function addEventListeners() {
   refs.closeBtn.addEventListener("click", closeModal);
   refs.modalWIndow.addEventListener("click", closeOnOverlay);
   window.addEventListener("keydown", scrollGallety);
+  refs.prevBtn.addEventListener("click", prevSlide);
+  refs.nextBtn.addEventListener("click", nextSlide);
   refs.modalWIndow.addEventListener("contextmenu", contextOff);
 }
 function removeEventListeners() {
@@ -39,6 +41,8 @@ function removeEventListeners() {
   refs.modalWIndow.removeEventListener("click", closeOnOverlay);
   window.removeEventListener("keydown", scrollGallety);
   refs.modalWIndow.removeEventListener("contextmenu", contextOff);
+  refs.prevBtn.removeEventListener("click", prevSlide);
+  refs.nextBtn.removeEventListener("click", nextSlide);
 }
 function setLargeImgSrc(url, alt) {
   refs.modalWIndow.classList.add("is-open");
@@ -54,7 +58,10 @@ function closeModal() {
 const contextOff = (event) => event.preventDefault();
 
 const closeOnOverlay = (event) =>
-  event.target.nodeName !== "IMG" && closeModal();
+  event.target.nodeName !== "IMG" &&
+  event.target.nodeName !== "BUTTON" &&
+  closeModal();
+//  ( event.target.nodeName !== "DIV" )&& closeModal();
 
 // let count = 0;
 
@@ -92,10 +99,6 @@ const closeOnOverlay = (event) =>
   //   }
   //   // event.code === "ArrowLeft" && prevSlide();
   //   event.code === "Escape" && closeModal();
-  //   // const prev = document.querySelector("#prev");
-  //   // const next = document.querySelector("#next");
-  //   // next.textContent = ">>>";
-  //   // prev.textContent = "<<<";
   // }
   // // function nextSlide (){
   // //   let thisImg = event.target;
@@ -121,17 +124,23 @@ function nextSlide() {
   refs.modalWIndowImg.alt = nextImage.alt;
 }
 
+//   // const next = document.querySelector("#next");
+//   // next.textContent = ">>>";
+//   // prev.textContent = "<<<";
+
 function prevSlide() {
   if (currentItem.previousElementSibling === null) {
     currentItem = currentItem.closest("ul").lastElementChild;
   }
   if ((currentItem = currentItem.previousElementSibling));
 
-  let prevImage = currentItem.querySelector(".gallery__image");
+  let prevImage = currentItem.querySelector(".gallery__image"); //!!
   refs.modalWIndowImg.src = prevImage.dataset.source;
   refs.modalWIndowImg.alt = prevImage.alt;
 }
-
+function lg() {
+  console.log(this);
+}
 {
   const child = refs.gallery.children;
   // console.log(child);
