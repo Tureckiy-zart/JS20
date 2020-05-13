@@ -8,20 +8,16 @@ export const markupGallery = (newGallery) =>
   newGallery.reduce((acc, item) => (acc += tamplateMarkup(item)), "");
 refs.gallery.insertAdjacentHTML("beforeend", markupGallery(data));
 //=======================
-
 export const openModal = (event) => {
   event.preventDefault();
-  // if (event.target.nodeName !== "IMG") return;
   currentItem = event.target.closest("li");
-
   if (event.target === event.currentTarget) return;
-
   const imgRefSrc = event.target.dataset.source;
   const imgRefAlt = event.target.alt;
-
   setLargeImgSrc(imgRefSrc, imgRefAlt);
   addEventListeners();
   {
+    // if (event.target.nodeName !== "IMG") return;
     // refs.modalWIndow.classList.add("is-open");
     // refs.modalWIndowImg.src = event.target.dataset.source;
     // refs.modalWIndowImg.alt = event.target.alt;
@@ -31,18 +27,18 @@ export const openModal = (event) => {
 function addEventListeners() {
   refs.closeBtn.addEventListener("click", closeModal);
   refs.modalWIndow.addEventListener("click", closeOnOverlay);
-  window.addEventListener("keydown", scrollGallety);
   refs.prevBtn.addEventListener("click", prevSlide);
   refs.nextBtn.addEventListener("click", nextSlide);
   refs.modalWIndow.addEventListener("contextmenu", contextOff);
+  window.addEventListener("keydown", scrollGallety);
 }
 function removeEventListeners() {
   refs.closeBtn.removeEventListener("click", closeModal);
   refs.modalWIndow.removeEventListener("click", closeOnOverlay);
-  window.removeEventListener("keydown", scrollGallety);
   refs.modalWIndow.removeEventListener("contextmenu", contextOff);
   refs.prevBtn.removeEventListener("click", prevSlide);
   refs.nextBtn.removeEventListener("click", nextSlide);
+  window.removeEventListener("keydown", scrollGallety);
 }
 function setLargeImgSrc(url, alt) {
   refs.modalWIndow.classList.add("is-open");
@@ -57,10 +53,42 @@ function closeModal() {
 }
 const contextOff = (event) => event.preventDefault();
 
-const closeOnOverlay = (event) =>
+const closeOnOverlay = (event) => {
   event.target.nodeName !== "IMG" &&
-  event.target.nodeName !== "BUTTON" &&
-  closeModal();
+    event.target.nodeName !== "BUTTON" &&
+    closeModal();
+};
+
+function scrollGallety() {
+  event.code === "ArrowRight" && nextSlide();
+  event.code === "ArrowLeft" && prevSlide();
+  event.code === "Escape" && closeModal();
+}
+
+function nextSlide() {
+  if (currentItem.nextElementSibling === null) {
+    currentItem = currentItem.closest("ul").firstElementChild;
+  }
+  if ((currentItem = currentItem.nextElementSibling));
+
+  let nextImage = currentItem.querySelector(".gallery__image");
+  refs.modalWIndowImg.src = nextImage.dataset.source;
+  refs.modalWIndowImg.alt = nextImage.alt;
+}
+
+//   // next.textContent = ">>>";
+//   // prev.textContent = "<<<";
+
+function prevSlide() {
+  if (currentItem.previousElementSibling === null) {
+    currentItem = currentItem.closest("ul").lastElementChild;
+  }
+  if ((currentItem = currentItem.previousElementSibling));
+
+  let prevImage = currentItem.querySelector(".gallery__image"); //!!
+  refs.modalWIndowImg.src = prevImage.dataset.source;
+  refs.modalWIndowImg.alt = prevImage.alt;
+}
 //  ( event.target.nodeName !== "DIV" )&& closeModal();
 
 // let count = 0;
@@ -107,40 +135,6 @@ const closeOnOverlay = (event) =>
   //========================================
 }
 
-function scrollGallety() {
-  event.code === "ArrowRight" && nextSlide();
-  event.code === "ArrowLeft" && prevSlide();
-  event.code === "Escape" && closeModal();
-}
-
-function nextSlide() {
-  if (currentItem.nextElementSibling === null) {
-    currentItem = currentItem.closest("ul").firstElementChild;
-  }
-  if ((currentItem = currentItem.nextElementSibling));
-
-  let nextImage = currentItem.querySelector(".gallery__image");
-  refs.modalWIndowImg.src = nextImage.dataset.source;
-  refs.modalWIndowImg.alt = nextImage.alt;
-}
-
-//   // const next = document.querySelector("#next");
-//   // next.textContent = ">>>";
-//   // prev.textContent = "<<<";
-
-function prevSlide() {
-  if (currentItem.previousElementSibling === null) {
-    currentItem = currentItem.closest("ul").lastElementChild;
-  }
-  if ((currentItem = currentItem.previousElementSibling));
-
-  let prevImage = currentItem.querySelector(".gallery__image"); //!!
-  refs.modalWIndowImg.src = prevImage.dataset.source;
-  refs.modalWIndowImg.alt = prevImage.alt;
-}
-function lg() {
-  console.log(this);
-}
 {
   const child = refs.gallery.children;
   // console.log(child);

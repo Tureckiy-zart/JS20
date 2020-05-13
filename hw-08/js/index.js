@@ -8,9 +8,4 @@ import { markupGallery, openModal } from "./functions.js";
 refs.gallery.addEventListener("click", openModal);
 
 
-
-
-
-
-
 // console.dir(refs.gallery.children[0]);
